@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 30px;
+            color: #2c3e50;
+        }
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+        .welcome-box {
+            background: white;
+            border-left: 5px solid #3498db;
+            border-radius: 8px;
+            padding: 20px 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+        .ticker {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        marquee { font-size: 0.95em; }
+    </style>
+</head>
+<body>
+    <h2>🏠 Accueil</h2>
+
+    <div class="welcome-box">
+        <p>Bienvenue sur ce site dédié à l'apprentissage du HTML.<br>
+        Utilisez le menu à gauche pour naviguer entre les différentes pages.</p>
+    </div>
+
+    <div class="ticker">
+        <marquee behavior="scroll" direction="left" scrollamount="5">
+            🌐 Bienvenue sur mon site web &nbsp;|&nbsp; 
+            📚 Apprenez le HTML facilement &nbsp;|&nbsp; 
+            🧭 Utilisez le menu pour naviguer entre les pages.
+        </marquee>
+    </div>
+</body>
+</html>

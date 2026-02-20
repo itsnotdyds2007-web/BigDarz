@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f3f4;
+            padding: 30px 20px;
+            color: #2c3e50;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 1.6em;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            max-width: 600px;
+            margin-inline: auto;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        fieldset {
+            background: white;
+            border: none;
+            border-radius: 10px;
+            padding: 20px 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        legend {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+        }
+
+        /* Champs texte et select */
+        .field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+
+        .field-group:last-child { margin-bottom: 0; }
+
+        label.field-label {
+            font-weight: bold;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 9px 12px;
+            border: 1.5px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.95em;
+            color: #2c3e50;
+            background: #fafafa;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52,152,219,0.15);
+            background: white;
+        }
+
+        textarea { resize: vertical; min-height: 90px; }
+
+        /* Radio et checkbox */
+        .radio-group,
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .radio-group label,
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            font-size: 0.92em;
+            padding: 7px 12px;
+            border-radius: 6px;
+            border: 1.5px solid transparent;
+            transition: background 0.15s, border-color 0.15s;
+        }
+
+        .radio-group label:hover,
+        .checkbox-group label:hover {
+            background: #eaf4fb;
+            border-color: #3498db;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            accent-color: #3498db;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .section-label {
+            font-weight: bold;
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 4px;
+        }
+
+        /* Boutons */
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 5px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 10px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 0.95em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+
+        input[type="submit"] {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            box-shadow: 0 4px 12px rgba(52,152,219,0.35);
+        }
+
+        input[type="submit"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(52,152,219,0.45);
+        }
+
+        input[type="reset"] {
+            background: white;
+            color: #e74c3c;
+            border: 2px solid #e74c3c;
+        }
+
+        input[type="reset"]:hover {
+            background: #e74c3c;
+            color: white;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+<h2>📋 Formulaire d'inscription</h2>
+
+<form method="post" action="traitement.php">
+
+    <!-- Informations personnelles -->
+    <fieldset>
+        <legend>👤 Informations personnelles</legend>
+
+        <div class="field-group">
+            <label class="field-label" for="nom">Nom :</label>
+            <input type="text" name="nom" id="nom" placeholder="Votre nom" />
+        </div>
+
+        <div class="field-group">
+            <label class="field-label" for="prenom">Prénom :</label>
+            <input type="text" name="prenom" id="prenom" placeholder="Votre prénom" />
+        </div>
+
+        <div class="field-group">
+            <label class="field-label" for="email">E-mail :</label>
+            <input type="email" name="email" id="email" placeholder="exemple@email.com" />
+        </div>
+
+        <div class="field-group">
+            <p class="section-label">Tranche d'âge :</p>
+            <div class="radio-group">
+                <label><input type="radio" name="age" id="a1" value="moins15" /> Moins de 15 ans</label>
+                <label><input type="radio" name="age" id="a2" value="15-25"   /> 15 – 25 ans</label>
+                <label><input type="radio" name="age" id="a3" value="25-40"   /> 25 – 40 ans</label>
+                <label><input type="radio" name="age" id="a4" value="plus40"  /> Plus de 40 ans</label>
+            </div>
+        </div>
+    </fieldset>
+
+    <!-- Localisation -->
+    <fieldset>
+        <legend>🌍 Localisation</legend>
+
+        <div class="field-group">
+            <p class="section-label">Continent :</p>
+            <div class="radio-group">
+                <label><input type="radio" name="continent" id="c1" value="afrique"   /> Afrique</label>
+                <label><input type="radio" name="continent" id="c2" value="europe"    /> Europe</label>
+                <label><input type="radio" name="continent" id="c3" value="amerique"  /> Amérique</label>
+                <label><input type="radio" name="continent" id="c4" value="asie"      /> Asie</label>
+                <label><input type="radio" name="continent" id="c5" value="australie" /> Australie</label>
+            </div>
+        </div>
+
+        <div class="field-group">
+            <label class="field-label" for="pays">Pays :</label>
+            <select name="pays" id="pays">
+                <option value="">-- Choisir un pays --</option>
+                <option value="benin">🇧🇯 Bénin</option>
+                <option value="france">🇫🇷 France</option>
+                <option value="canada">🇨🇦 Canada</option>
+                <option value="etats-unis">🇺🇸 États-Unis</option>
+                <option value="chine">🇨🇳 Chine</option>
+            </select>
+        </div>
+    </fieldset>
+
+    <!-- Préférences -->
+    <fieldset>
+        <legend>🍽️ Préférences alimentaires</legend>
+        <p class="section-label">Aliments préférés :</p>
+        <div class="checkbox-group">
+            <label><input type="checkbox" id="frites"   name="frites"   /> 🍟 Frites</label>
+            <label><input type="checkbox" id="steak"    name="steak"    /> 🥩 Steak</label>
+            <label><input type="checkbox" id="epinards" name="epinards" /> 🥬 Épinards</label>
+            <label><input type="checkbox" id="huitres"  name="huitres"  /> 🦪 Huîtres</label>
+        </div>
+    </fieldset>
+
+    <!-- Souhait -->
+    <fieldset>
+        <legend>✨ Votre souhait</legend>
+
+        <div class="radio-group">
+            <label><input type="radio" name="souhait" id="s1" value="riche"       /> 💰 Être riche</label>
+            <label><input type="radio" name="souhait" id="s2" value="celebre"     /> 🌟 Être célèbre</label>
+            <label><input type="radio" name="souhait" id="s3" value="intelligent" /> 🧠 Être plus intelligent</label>
+            <label><input type="radio" name="souhait" id="s4" value="autre"       /> 💭 Autre</label>
+        </div>
+
+        <div class="field-group" style="margin-top: 15px;">
+            <label class="field-label" for="precisions">Précisions :</label>
+            <textarea name="precisions" id="precisions" rows="4"
+                      placeholder="Décrivez votre souhait..."></textarea>
+        </div>
+    </fieldset>
+
+    <!-- Boutons -->
+    <div class="btn-group">
+        <input type="submit" value="✔ Envoyer" />
+        <input type="reset"  value="✖ Annuler" />
+    </div>
+
+</form>
+
+</body>
+</html>

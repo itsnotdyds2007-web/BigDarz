@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV — Sewide DJEGO</title>
+    <link rel="stylesheet" type="text/css" href="Page2.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #e6f0fa;
+            color: #333;
+            padding: 0 0 40px;
+        }
+
+        /* ── EN-TÊTE ── */
+        header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 25px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header a img {
+            height: 80px;
+            width: auto;
+            border-radius: 6px;
+            object-fit: contain;
+            background: white;
+            padding: 5px;
+        }
+
+        header .titre {
+            text-align: center;
+            flex: 1;
+        }
+
+        header .titre h1 {
+            font-size: 1.7em;
+            letter-spacing: 1px;
+        }
+
+        header .titre p {
+            font-size: 0.95em;
+            opacity: 0.85;
+            margin-top: 5px;
+        }
+
+        /* ── PROFIL ── */
+        .profil {
+            text-align: center;
+            margin: 30px auto 10px;
+        }
+
+        .profil img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #3498db;
+            box-shadow: 0 6px 20px rgba(52,152,219,0.3);
+        }
+
+        .profil .nom {
+            margin-top: 12px;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .profil .sous-titre {
+            color: #3498db;
+            font-size: 0.95em;
+            margin-top: 4px;
+        }
+
+        /* ── CONTENU ── */
+        main {
+            max-width: 800px;
+            margin: 25px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        section {
+            background: white;
+            border-radius: 10px;
+            padding: 25px 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        section h2 {
+            font-size: 1.15em;
+            color: #2c3e50;
+            border-left: 4px solid #3498db;
+            padding-left: 12px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        section p {
+            line-height: 1.75;
+            color: #555;
+            margin-bottom: 10px;
+            font-size: 0.95em;
+        }
+
+        section p:last-child { margin-bottom: 0; }
+
+        /* ── DIPLÔMES ── */
+        ul.diplomes {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        ul.diplomes li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: #f4f8fd;
+            border-radius: 8px;
+            padding: 10px 15px;
+            border-left: 3px solid #3498db;
+        }
+
+        ul.diplomes li .icone {
+            font-size: 1.3em;
+            flex-shrink: 0;
+        }
+
+        ul.diplomes li .info strong {
+            display: block;
+            color: #2c3e50;
+            font-size: 0.95em;
+        }
+
+        ul.diplomes li .info span {
+            font-size: 0.85em;
+            color: #777;
+        }
+
+        /* ── EXPÉRIENCES ── */
+        ol.experiences {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            counter-reset: exp;
+        }
+
+        ol.experiences li {
+            counter-increment: exp;
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        ol.experiences li::before {
+            content: counter(exp);
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            font-weight: bold;
+            font-size: 0.85em;
+            min-width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        ol.experiences li p {
+            margin: 0;
+        }
+
+        ol.experiences li p strong {
+            display: block;
+            color: #2c3e50;
+            margin-bottom: 4px;
+            font-size: 0.95em;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 600px) {
+            header { flex-direction: column; text-align: center; }
+            section { padding: 20px 18px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- EN-TÊTE -->
+<header>
+    <a href="https://pigier-benin.com/" target="_blank">
+        <img src="pigier-benin.png" alt="Pigier Bénin" />
+    </a>
+
+    <div class="titre">
+        <h1>🌐 Mon Site Web</h1>
+        <p>Portfolio de Sewide DJEGO</p>
+    </div>
+
+    <a href="https://enseignementsuperieur.gouv.bj/" target="_blank">
+        <img src="OIP.webp" alt="Enseignement Supérieur Bénin" />
+    </a>
+</header>
+
+<!-- PHOTO DE PROFIL -->
+<div class="profil">
+    <a href="Page1new.html">
+        <img src="profil.jpg" alt="Photo de profil de Sewide DJEGO" />
+    </a>
+    <a href="#Jolly_Roger"><p class="nom">Sewide DJEGO</p></a>
+    <p class="sous-titre">Étudiant en Informatique — Data & Développement Web</p>
+</div>
+
+<!-- CONTENU PRINCIPAL -->
+<main>
+
+    <!-- I. Informations personnelles -->
+    <section id="infos">
+        <h2>I — Informations personnelles</h2>
+        <p>
+            Je m'appelle <strong>Sewide DJEGO</strong>, étudiant en
+            <strong>informatique</strong> avec un intérêt marqué pour le
+            <em>développement web</em>, la <em>data</em> et le
+            <em>business numérique</em>.
+        </p>
+        <p>
+            Curieux et autodidacte, je développe progressivement mes compétences
+            en programmation à travers l'apprentissage de langages tels que
+            <strong>Python</strong>, <strong>C</strong>, <strong>XHTML</strong>
+            et <strong>CSS</strong>. J'accorde une importance particulière à la
+            logique algorithmique et à la résolution de problèmes.
+        </p>
+        <p>
+            Mon ambition est de devenir un expert des technologies digitales,
+            capable de concevoir des solutions innovantes, de lancer des projets
+            en ligne rentables et d'exploiter la puissance des données dans un
+            environnement numérique en constante évolution.
+        </p>
+    </section>
+
+    <!-- II. Diplômes -->
+    <section id="diplomes">
+        <h2>II — Mes Diplômes</h2>
+        <ul class="diplomes">
+            <li>
+                <span class="icone">🎓</span>
+                <div class="info">
+                    <strong>CEP</strong>
+                    <span>Pierre Joseph de Clorivière</span>
+                </div>
+            </li>
+            <li>
+                <span class="icone">🎓</span>
+                <div class="info">
+                    <strong>BEPC</strong>
+                    <span>Collège Catholique St Jean Baptiste de Cotonou</span>
+                </div>
+            </li>
+            <li>
+                <span class="icone">🎓</span>
+                <div class="info">
+                    <strong>BAC</strong>
+                    <span>Collège Catholique St Jean Baptiste de Cotonou</span>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- III. Expériences -->
+    <section id="Jolly_Roger">
+        <h2 >III — Mes Expériences</h2>
+        <ol class="experiences">
+            <li>
+                <p>
+                    <strong>Projet académique – Algorithmique</strong>
+                    Conception et implémentation de plusieurs algorithmes en
+                    langage C (calculs, conditions, boucles), avec un accent
+                    sur la logique et l'optimisation.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <strong>Projet personnel – Programmation Python</strong>
+                    Développement de petits programmes en Python pour automatiser
+                    des calculs, créer des quiz interactifs et manipuler des
+                    données simples.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <strong>Initiation au développement web</strong>
+                    Réalisation de pages web statiques en XHTML, intégrant du
+                    texte, des images et une structure claire, dans le respect
+                    des règles de syntaxe stricte.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <strong>Autoformation en technologies numériques</strong>
+                    Apprentissage autonome via des ressources en ligne sur le
+                    développement web, la data et le business digital.
+                </p>
+            </li>
+        </ol>
+    </section>
+
+</main>
+
+</body>
+</html>

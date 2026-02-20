@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Djego Sewide</title>
+    <style>
+        /* ===== RESET ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* ===== BODY ===== */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #e6f0fa;
+            color: #333;
+            padding: 30px 20px;
+            line-height: 1.75;
+        }
+
+        /* ===== CARTE ===== */
+        .carte {
+            background: white;
+            border-radius: 10px;
+            padding: 25px 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-bottom: 22px;
+        }
+
+        /* ===== BANNIÈRE TITRE ===== */
+        .banniere {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 10px;
+            margin-bottom: 22px;
+            box-shadow: 0 6px 20px rgba(52,152,219,0.3);
+        }
+
+        .banniere h1 {
+            font-size: 2em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: none;
+        }
+
+        .banniere p {
+            margin-top: 8px;
+            opacity: 0.85;
+            font-size: 0.95em;
+        }
+
+        /* ===== TITRES ===== */
+        h1 {
+            font-size: 1.7em;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 8px;
+            margin-bottom: 14px;
+        }
+
+        h2 {
+            font-size: 1.2em;
+            color: #3498db;
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h3 {
+            font-size: 1.05em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        h4 {
+            font-size: 1em;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        /* ===== PARAGRAPHES ===== */
+        p {
+            color: #555;
+            font-size: 0.95em;
+            margin-bottom: 12px;
+        }
+
+        p:last-child { margin-bottom: 0; }
+
+        em { color: #2980b9; font-style: italic; }
+
+        /* ===== CITATION INLINE <q> ===== */
+        q {
+            color: #6c3483;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        q::before { content: "« "; }
+        q::after  { content: " »"; }
+
+        /* ===== BLOCKQUOTE ===== */
+        blockquote {
+            background-color: #f4f8fd;
+            border-left: 5px solid #3498db;
+            border-radius: 0 8px 8px 0;
+            padding: 18px 22px;
+            margin: 14px 0 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 0.93em;
+            color: #444;
+            line-height: 1.9;
+            box-shadow: inset 0 0 8px rgba(52,152,219,0.06);
+        }
+
+        blockquote p {
+            color: #444;
+            margin: 0;
+        }
+
+        /* Guillemet décoratif */
+        blockquote::before {
+            content: "\201C";
+            font-size: 3.5em;
+            color: #3498db;
+            opacity: 0.3;
+            display: block;
+            line-height: 0.4;
+            margin-bottom: 10px;
+        }
+
+        /* Auteur */
+        blockquote footer {
+            margin-top: 12px;
+            font-size: 0.82em;
+            color: #3498db;
+            font-style: italic;
+            text-align: right;
+        }
+
+        /* ===== SUP / SUB ===== */
+        sup, sub {
+            font-size: 0.72em;
+            color: #3498db;
+        }
+
+        /* ===== BADGE INFO ===== */
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            font-size: 0.78em;
+            padding: 2px 12px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 600px) {
+            body { padding: 15px 10px; }
+            .carte { padding: 18px 14px; }
+            .banniere h1 { font-size: 1.4em; }
+            blockquote { padding: 14px 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ── BANNIÈRE ── -->
+    <div class="banniere">
+        <h1>🌐 Bienvenu sur notre site !</h1>
+        <p>Découvrez mon univers — Data Science &amp; Développement Web</p>
+    </div>
+
+    <!-- ── PRÉSENTATION ── -->
+    <div class="carte">
+        <h2>👤 Je me présente</h2>
+        <p>
+            Bonjour et bienvenue sur mon site !<br />
+            Je me nomme <strong>Djego Sewide</strong>. Je suis né le
+            <strong>22 Mai 2007</strong> et je suis en
+            <strong>Première année de Data Science</strong>.
+        </p>
+    </div>
+
+    <!-- ── CE QUE JE FAIS ── -->
+    <div class="carte">
+        <h2>💻 Ce que je suis en train de faire</h2>
+        <p>
+            Ceci est mon premier test, et je suis vraiment heureux d'écrire
+            ma première page web. Je deviendrai certainement un grand
+            <strong>Webmaster</strong> dans quelque temps.
+        </p>
+    </div>
+
+    <!-- ── HISTOIRE DU WEB ── -->
+    <div class="carte">
+        <h2>📜 Un peu d'histoire</h2>
+        <h3>HTML &amp; XHTML</h3>
+        <span class="badge">Point p<sub>1</sub></span>
+        <p>
+            <em>Le XHTML ?</em><br />
+            Le langage XHTML est le langage qui nous permet de créer des sites
+            web en ce début du XXI<sup>ème</sup> siècle.<br />
+            Avant, vers la fin du XX<sup>ème</sup>, on utilisait le langage
+            HTML, qui disparaît aujourd'hui peu à peu au profit du XHTML.
+        </p>
+
+        <p>
+            Vous souvenez-vous de la phrase célèbre qu'a prononcée Neil Armstrong
+            en posant le premier pied sur la Lune ?
+            <q>C'est un petit pas pour l'Homme, un grand pas pour l'Humanité</q>.
+            C'était le <strong>20 Juillet 1969</strong>…
+        </p>
+    </div>
+
+    <!-- ── FABLE ── -->
+    <div class="carte">
+        <h2>📖 Le Corbeau et le Renard</h2>
+        <h4>Une des plus célèbres fables de <em>La Fontaine</em></h4>
+
+        <blockquote>
+            <p>
+                Maître Corbeau, sur un arbre perché,<br />
+                Tenait en son bec un fromage.<br />
+                Maître Renard, par l'odeur alléché,<br />
+                Lui tint à peu près ce langage :<br />
+                « Hé ! bonjour, Monsieur du Corbeau.<br />
+                Que vous êtes joli ! que vous me semblez beau !<br />
+                Sans mentir, si votre ramage<br />
+                Se rapporte à votre plumage,<br />
+                Vous êtes le Phénix des hôtes de ces bois. »<br />
+                À ces mots le Corbeau ne se sent pas de joie ;<br />
+                Et pour montrer sa belle voix,<br />
+                Il ouvre un large bec, laisse tomber sa proie.<br />
+                Le Renard s'en saisit, et dit : « Mon bon Monsieur,<br />
+                Apprenez que tout flatteur<br />
+                Vit aux dépens de celui qui l'écoute :<br />
+                Cette leçon vaut bien un fromage, sans doute. »<br />
+                Le Corbeau, honteux et confus,<br />
+                Jura, mais un peu tard, qu'on ne l'y prendrait plus.
+            </p>
+            <footer>— Jean de La Fontaine, <em>Fables</em>, Livre I (1668)</footer>
+        </blockquote>
+    </div>
+
+</body>
+</html>

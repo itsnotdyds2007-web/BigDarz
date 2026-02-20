@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>CV — DJEGO Daryl</title>
+    <link rel="stylesheet" type="text/css" href="CVnew.css" />
+    <style type="text/css">
+
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #d6e4f0;
+            padding: 30px 20px;
+            color: #333;
+        }
+
+        /* ===== CONTENEUR PRINCIPAL ===== */
+        #cv {
+            display: flex;
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+            min-height: 90vh;
+        }
+
+        /* ===== SIDEBAR ===== */
+        #sidebar {
+            width: 270px;
+            min-width: 270px;
+            background: linear-gradient(180deg, #2c3e50 60%, #34495e 100%);
+            color: #ecf0f1;
+            padding: 35px 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        /* Photo de profil */
+        .photo-wrapper {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .photo-wrapper img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #3498db;
+            box-shadow: 0 4px 14px rgba(52,152,219,0.45);
+        }
+
+        /* Titres sidebar */
+        #sidebar h2 {
+            font-size: 0.78em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #3498db;
+            border-bottom: 1px solid #3d5166;
+            padding-bottom: 5px;
+            margin-top: 18px;
+            margin-bottom: 10px;
+        }
+
+        #sidebar p {
+            font-size: 0.88em;
+            line-height: 1.65;
+            color: #bdc3c7;
+        }
+
+        #sidebar ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        #sidebar ul li {
+            font-size: 0.87em;
+            color: #bdc3c7;
+            padding-left: 12px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        #sidebar ul li::before {
+            content: "▸";
+            color: #3498db;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Barres de compétences */
+        .skill-bar-wrapper {
+            margin-top: 4px;
+        }
+
+        .skill-item {
+            margin-bottom: 10px;
+        }
+
+        .skill-item span {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.83em;
+            color: #bdc3c7;
+            margin-bottom: 4px;
+        }
+
+        .skill-bar {
+            height: 5px;
+            background-color: #3d5166;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-bar div {
+            height: 100%;
+            background: linear-gradient(90deg, #3498db, #5dade2);
+            border-radius: 10px;
+        }
+
+        /* Langues */
+        .langue-item {
+            margin-bottom: 8px;
+        }
+
+        .langue-item .langue-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.83em;
+            color: #bdc3c7;
+            margin-bottom: 4px;
+        }
+
+        .langue-dots {
+            display: flex;
+            gap: 5px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #3d5166;
+        }
+
+        .dot.actif {
+            background-color: #3498db;
+        }
+
+        /* ===== CONTENU PRINCIPAL ===== */
+        #content {
+            flex: 1;
+            background-color: #ffffff;
+            padding: 40px 35px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        /* Nom et titre */
+        #content h1 {
+            font-size: 2em;
+            color: #2c3e50;
+            letter-spacing: 1px;
+            line-height: 1.1;
+        }
+
+        #content h1 span {
+            color: #3498db;
+        }
+
+        #content .sous-titre {
+            font-size: 0.95em;
+            color: #3498db;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e8f4fc;
+        }
+
+        /* Titres de section */
+        #content h2 {
+            font-size: 0.82em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #3498db;
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+            margin-top: 22px;
+            margin-bottom: 14px;
+        }
+
+        /* Blocs formation / expérience */
+        .bloc {
+            padding: 14px 16px;
+            border-radius: 8px;
+            background-color: #f4f8fd;
+            border-left: 3px solid #d0e8f8;
+            margin-bottom: 12px;
+            transition: border-color 0.2s;
+        }
+
+        .bloc:hover {
+            border-left-color: #3498db;
+        }
+
+        .bloc .date {
+            display: inline-block;
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            font-size: 0.75em;
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .bloc strong {
+            display: block;
+            color: #2c3e50;
+            font-size: 0.97em;
+            margin-bottom: 4px;
+        }
+
+        .bloc .etablissement {
+            font-size: 0.85em;
+            color: #3498db;
+            font-style: italic;
+            margin-bottom: 6px;
+        }
+
+        .bloc ul {
+            margin-top: 8px;
+            padding-left: 18px;
+            color: #666;
+        }
+
+        .bloc ul li {
+            font-size: 0.87em;
+            margin-bottom: 3px;
+            line-height: 1.5;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media screen and (max-width: 650px) {
+            #cv { flex-direction: column; }
+            #sidebar { width: 100%; min-width: unset; }
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="cv">
+
+    <!-- ── COLONNE GAUCHE ── -->
+    <div id="sidebar">
+
+        <!-- Photo -->
+        <div class="photo-wrapper">
+            <img src="profil.jpg" alt="Photo de profil de DJEGO Daryl" />
+        </div>
+
+        <!-- Profil -->
+        <h2>Profil</h2>
+        <p>
+            Étudiant en Data, motivé et rigoureux, intéressé par l'analyse
+            de données et les technologies numériques.
+        </p>
+
+        <!-- Contact -->
+        <h2>Contact</h2>
+        <ul>
+            <li>📞 +229 01 53 04 65 58</li>
+            <li>✉ djsew07@gmail.com</li>
+            <li>📍 Cotonou, Bénin</li>
+        </ul>
+
+        <!-- Compétences avec barres -->
+        <h2>Compétences</h2>
+        <div class="skill-bar-wrapper">
+            <div class="skill-item">
+                <span><em>Python</em><em>80%</em></span>
+                <div class="skill-bar"><div style="width:80%"></div></div>
+            </div>
+            <div class="skill-item">
+                <span><em>Analyse de données</em><em>70%</em></span>
+                <div class="skill-bar"><div style="width:70%"></div></div>
+            </div>
+            <div class="skill-item">
+                <span><em>Algorithmique</em><em>75%</em></span>
+                <div class="skill-bar"><div style="width:75%"></div></div>
+            </div>
+            <div class="skill-item">
+                <span><em>XHTML / CSS</em><em>65%</em></span>
+                <div class="skill-bar"><div style="width:65%"></div></div>
+            </div>
+        </div>
+
+        <!-- Langues avec points -->
+        <h2>Langues</h2>
+        <div class="langue-item">
+            <div class="langue-label">
+                <span>Français</span><span>Courant</span>
+            </div>
+            <div class="langue-dots">
+                <div class="dot actif"></div>
+                <div class="dot actif"></div>
+                <div class="dot actif"></div>
+                <div class="dot actif"></div>
+                <div class="dot actif"></div>
+            </div>
+        </div>
+        <div class="langue-item">
+            <div class="langue-label">
+                <span>Anglais</span><span>Intermédiaire</span>
+            </div>
+            <div class="langue-dots">
+                <div class="dot actif"></div>
+                <div class="dot actif"></div>
+                <div class="dot actif"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ── CONTENU PRINCIPAL ── -->
+    <div id="content">
+
+        <h1>DJEGO <span>Daryl</span></h1>
+        <p class="sous-titre">Étudiant en Data</p>
+
+        <!-- Formation -->
+        <h2>Formation</h2>
+
+        <div class="bloc">
+            <span class="date">2026 — 2027</span>
+            <strong>Licence en Data / Informatique</strong>
+            <p class="etablissement">Pigier Bénin</p>
+        </div>
+
+        <!-- Expériences -->
+        <h2>Expériences &amp; Projets</h2>
+
+        <div class="bloc">
+            <span class="date">2026</span>
+            <strong>Projet d'analyse de données</strong>
+            <ul>
+                <li>Nettoyage et analyse de jeux de données</li>
+                <li>Visualisation simple avec Python</li>
+            </ul>
+        </div>
+
+        <div class="bloc">
+            <span class="date">2026</span>
+            <strong>Mini-projets en programmation</strong>
+            <ul>
+                <li>Implémentation d'algorithmes en Python et C</li>
+                <li>Création de pages web en XHTML strict</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

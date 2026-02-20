@@ -1,0 +1,314 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #e6f0fa;
+    color: #333;
+    padding: 0 0 40px;
+    min-height: 100vh;
+}
+
+/* =====================
+   EN-TÊTE
+   ===================== */
+header {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: white;
+    padding: 25px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+header a img {
+    height: 80px;
+    width: auto;
+    border-radius: 6px;
+    object-fit: contain;
+    background: white;
+    padding: 5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+header a img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+header .titre {
+    text-align: center;
+    flex: 1;
+}
+
+header .titre h1 {
+    font-size: 1.7em;
+    letter-spacing: 1px;
+    color: white;
+}
+
+header .titre p {
+    font-size: 0.95em;
+    opacity: 0.85;
+    margin-top: 5px;
+    color: white;
+}
+
+/* =====================
+   PHOTO DE PROFIL
+   ===================== */
+.profil {
+    text-align: center;
+    margin: 35px auto 10px;
+}
+
+.profil a img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #3498db;
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.35);
+    transition: transform 0.25s, box-shadow 0.25s;
+    display: block;
+    margin: 0 auto;
+}
+
+.profil a img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 28px rgba(52, 152, 219, 0.45);
+}
+
+.profil .nom {
+    margin-top: 14px;
+    font-size: 1.35em;
+    font-weight: bold;
+    color: #2c3e50;
+    letter-spacing: 0.5px;
+}
+
+.profil .sous-titre {
+    color: #3498db;
+    font-size: 0.95em;
+    margin-top: 5px;
+    letter-spacing: 0.3px;
+}
+
+/* =====================
+   CONTENU PRINCIPAL
+   ===================== */
+main {
+    max-width: 800px;
+    margin: 28px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* =====================
+   SECTIONS
+   ===================== */
+section {
+    background: white;
+    border-radius: 10px;
+    padding: 25px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.2s;
+}
+
+section:hover {
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.12);
+}
+
+section h2 {
+    font-size: 1em;
+    color: #2c3e50;
+    border-left: 4px solid #3498db;
+    padding-left: 12px;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+section p {
+    line-height: 1.75;
+    color: #555;
+    margin-bottom: 10px;
+    font-size: 0.95em;
+}
+
+section p:last-child {
+    margin-bottom: 0;
+}
+
+section p strong {
+    color: #2c3e50;
+}
+
+section p em {
+    color: #3498db;
+    font-style: italic;
+}
+
+/* =====================
+   DIPLÔMES
+   ===================== */
+ul.diplomes {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+ul.diplomes li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: #f4f8fd;
+    border-radius: 8px;
+    padding: 12px 16px;
+    border-left: 3px solid #3498db;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+ul.diplomes li:hover {
+    background-color: #eaf2fb;
+    border-left-color: #2c3e50;
+}
+
+ul.diplomes li .icone {
+    font-size: 1.3em;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+ul.diplomes li .info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+ul.diplomes li .info strong {
+    display: block;
+    color: #2c3e50;
+    font-size: 0.97em;
+}
+
+ul.diplomes li .info span {
+    font-size: 0.85em;
+    color: #777;
+    font-style: italic;
+}
+
+/* =====================
+   EXPÉRIENCES
+   ===================== */
+ol.experiences {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    counter-reset: exp;
+}
+
+ol.experiences li {
+    counter-increment: exp;
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    background: #f4f8fd;
+    border-radius: 8px;
+    padding: 14px 16px;
+    border-left: 3px solid transparent;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+ol.experiences li:hover {
+    background-color: #eaf2fb;
+    border-left-color: #3498db;
+}
+
+ol.experiences li::before {
+    content: counter(exp);
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: white;
+    font-weight: bold;
+    font-size: 0.85em;
+    min-width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+    box-shadow: 0 2px 6px rgba(52, 152, 219, 0.3);
+}
+
+ol.experiences li p {
+    margin: 0;
+    line-height: 1.65;
+    color: #555;
+    font-size: 0.93em;
+}
+
+ol.experiences li p strong {
+    display: block;
+    color: #2c3e50;
+    margin-bottom: 5px;
+    font-size: 0.97em;
+}
+
+/* =====================
+   RESPONSIVE
+   ===================== */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 18px;
+    }
+
+    header a img {
+        height: 60px;
+    }
+
+    header .titre h1 {
+        font-size: 1.3em;
+    }
+
+    .profil a img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .profil .nom {
+        font-size: 1.1em;
+    }
+
+    main {
+        padding: 0 12px;
+        gap: 16px;
+    }
+
+    section {
+        padding: 18px 16px;
+    }
+
+    section h2 {
+        font-size: 0.9em;
+    }
+
+    ol.experiences li {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

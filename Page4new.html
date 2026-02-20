@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 4 — Listes & Contenus</title>
+    <link rel="stylesheet" type="text/css" href="monstyle.css">
+    <style>
+        /* ===== RESET ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* ===== BODY ===== */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #e6f0fa;
+            color: #333;
+            padding: 30px 20px;
+            line-height: 1.7;
+        }
+
+        /* ===== CARTE / SECTION ===== */
+        .carte {
+            background: white;
+            border-radius: 10px;
+            padding: 22px 28px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-bottom: 22px;
+        }
+
+        /* ===== TITRES ===== */
+        h1 {
+            font-size: 1.6em;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+        }
+
+        h2 {
+            font-size: 1.15em;
+            color: #3498db;
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+            margin: 6px 0 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== PARAGRAPHES ===== */
+        p {
+            color: #555;
+            margin-bottom: 10px;
+            font-size: 0.95em;
+        }
+
+        p em { color: #3498db; font-style: italic; }
+        p strong { color: #e74c3c; }
+
+        /* ===== LISTES NON ORDONNÉES ===== */
+        ul {
+            padding-left: 25px;
+            margin-bottom: 12px;
+        }
+
+        ul li {
+            padding: 4px 0;
+            color: #444;
+            font-size: 0.93em;
+            line-height: 1.6;
+        }
+
+        /* Avec retrait (par défaut) */
+        ul.retrait {
+            padding-left: 40px;
+            list-style-type: disc;
+        }
+
+        /* Sans retrait */
+        ul.pas_de_retrait {
+            padding-left: 0;
+            list-style-position: inside;
+        }
+
+        /* Types de puces */
+        ul.cercle  { list-style-type: circle; }
+        ul.carre   { list-style-type: square; }
+        ul.rien    { list-style-type: none; padding-left: 0; }
+
+        ul.rien li {
+            padding-left: 10px;
+            border-left: 3px solid #3498db;
+            margin-bottom: 4px;
+        }
+
+        /* ===== LISTES ORDONNÉES ===== */
+        ol {
+            padding-left: 30px;
+            margin-bottom: 12px;
+        }
+
+        ol li {
+            padding: 4px 0;
+            color: #444;
+            font-size: 0.93em;
+            line-height: 1.6;
+        }
+
+        ol.commence_a_zero    { list-style-type: decimal-leading-zero; }
+        ol.lettres_minuscules { list-style-type: lower-alpha; }
+        ol.chiffres_romains   { list-style-type: upper-roman; }
+        ol.lettres_grecques   { list-style-type: lower-greek; }
+
+        /* ===== LISTE DE DÉFINITIONS ===== */
+        dl {
+            margin-bottom: 12px;
+        }
+
+        dt {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 0.97em;
+            margin-top: 10px;
+            padding-left: 10px;
+            border-left: 3px solid #3498db;
+        }
+
+        dd {
+            color: #666;
+            font-size: 0.9em;
+            padding-left: 28px;
+            margin-top: 3px;
+            font-style: italic;
+        }
+
+        /* ===== PARAGRAPHES IDENTIFIÉS ===== */
+        p#premier {
+            background-color: #eaf4fb;
+            border-left: 4px solid #3498db;
+            padding: 8px 14px;
+            border-radius: 0 6px 6px 0;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 0.92em;
+        }
+
+        p#second {
+            background-color: #fdfefe;
+            border-left: 4px solid #aed6f1;
+            padding: 8px 14px;
+            border-radius: 0 6px 6px 0;
+            margin-bottom: 8px;
+            color: #555;
+            font-size: 0.92em;
+        }
+
+        /* ===== SÉPARATEUR ===== */
+        hr.separation {
+            border: none;
+            border-top: 2px solid #d0dce8;
+            margin: 16px 0 0;
+        }
+
+        /* ===== LABEL TYPE DE LISTE ===== */
+        .label-type {
+            display: inline-block;
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            font-size: 0.78em;
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 600px) {
+            body { padding: 15px 10px; }
+            .carte { padding: 16px 14px; }
+            h1 { font-size: 1.3em; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ── LISTES DE BASE ── -->
+<div class="carte">
+    <h2>🍓 Liste non ordonnée simple</h2>
+    <ul>
+        <li>Fraises</li>
+        <li>Framboises</li>
+        <li>Cerises</li>
+    </ul>
+
+    <h2>📋 Liste ordonnée simple</h2>
+    <ol>
+        <li>Je me lève</li>
+        <li>Je mange et je bois</li>
+        <li>Je retourne me coucher</li>
+    </ol>
+</div>
+
+<!-- ── LISTE DE DÉFINITIONS ── -->
+<div class="carte">
+    <h2>📖 Liste de définitions</h2>
+    <dl>
+        <dt>🐱 Chat</dt>
+        <dd>Animal à 4 pattes qui fait "Miaou !"</dd>
+        <dt>🐶 Chien</dt>
+        <dd>Animal à 4 pattes qui fait "Ouaf Ouaf !"</dd>
+        <dt>👨‍🏫 Prof de maths</dt>
+        <dd>Personne qui enseigne des choses que personne ne comprend</dd>
+    </dl>
+</div>
+
+<!-- ── RETRAIT ── -->
+<div class="carte">
+    <h2>↔️ Retrait des listes</h2>
+
+    <p>Voici une liste <strong>avec</strong> retrait (par défaut) :</p>
+    <ul class="retrait">
+        <li>Liste<br />à puces</li>
+        <li>Ligne 1<br />Ligne 2</li>
+        <li>Vous pouvez voir<br />que le texte est décalé sur la droite</li>
+    </ul>
+
+    <p>Voici une liste <strong>sans</strong> retrait :</p>
+    <ul class="pas_de_retrait">
+        <li>Liste<br />à puces</li>
+        <li>Ligne 1<br />Ligne 2</li>
+        <li>Vous pouvez voir<br />que le texte n'est pas décalé sur la droite</li>
+    </ul>
+</div>
+
+<!-- ── TYPES DE PUCES ── -->
+<div class="carte">
+    <h2>🔵 Listes non ordonnées — types de puces</h2>
+
+    <p><span class="label-type">disc</span> — par défaut</p>
+    <ul>
+        <li>Liste</li><li>à</li><li>puces</li>
+    </ul>
+
+    <p><span class="label-type">circle</span></p>
+    <ul class="cercle">
+        <li>Liste</li><li>à</li><li>puces</li>
+    </ul>
+
+    <p><span class="label-type">square</span></p>
+    <ul class="carre">
+        <li>Liste</li><li>à</li><li>puces</li>
+    </ul>
+
+    <p><span class="label-type">none</span> — sans puces</p>
+    <ul class="rien">
+        <li>Liste</li><li>à</li><li>puces</li>
+    </ul>
+</div>
+
+<!-- ── LISTES ORDONNÉES ── -->
+<div class="carte">
+    <h2>🔢 Listes ordonnées — types de numérotation</h2>
+
+    <p><span class="label-type">decimal</span> — par défaut</p>
+    <ol>
+        <li>Un</li><li>Deux</li><li>Trois</li><li>Quatre</li>
+    </ol>
+
+    <p><span class="label-type">decimal-leading-zero</span></p>
+    <ol class="commence_a_zero">
+        <li>Un</li><li>Deux</li><li>Trois</li><li>Quatre</li>
+    </ol>
+
+    <p><span class="label-type">lower-alpha</span></p>
+    <ol class="lettres_minuscules">
+        <li>Un</li><li>Deux</li><li>Trois</li><li>Quatre</li>
+    </ol>
+
+    <p><span class="label-type">upper-roman</span></p>
+    <ol class="chiffres_romains">
+        <li>Un</li><li>Deux</li><li>Trois</li><li>Quatre</li>
+    </ol>
+
+    <p><span class="label-type">lower-greek</span></p>
+    <ol class="lettres_grecques">
+        <li>Un</li><li>Deux</li><li>Trois</li><li>Quatre</li>
+    </ol>
+</div>
+
+<!-- ── DIVS ET PARAGRAPHES ── -->
+<div class="carte">
+    <h2>📝 Contenu textuel</h2>
+    <p>paragraphe de contenu</p>
+</div>
+
+<div class="carte">
+    <h1>Quel joli titre évocateur</h1>
+    <p>Un petit texte en rapport avec le titre principal.</p>
+    <h2>Un sous-titre intéressant</h2>
+    <p>Un second paragraphe avec des <em>mots importants</em>.</p>
+</div>
+
+<div class="carte">
+    <p id="premier">Premier paragraphe de texte</p>
+    <p id="second">Deuxième paragraphe de texte</p>
+</div>
+
+<div class="carte">
+    <p id="premier">Premier paragraphe de texte</p>
+    <p id="second">
+        Deuxième paragraphe de texte. Deuxième paragraphe de texte.
+        Deuxième paragraphe de texte. Deuxième paragraphe de texte.
+        Deuxième paragraphe de texte.
+    </p>
+    <hr class="separation" />
+</div>
+
+</body>
+</html>
